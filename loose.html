@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Dommage, vous n'avez pas gagné cette fois...</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f3f3f3;
+            display: flex;
+            justify-content: space-between;
+
+
+        }
+
+        .container {
+            max-width: 45%;
+            /* Ajuster la largeur pour laisser de la place à l'autre div */
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            background-image: url('image/troll.jfif');
+            background-repeat: no-repeat;
+            background-position: bottom;
+            margin-top: 5px;
+        }
+
+        .image {
+            width: 45%;
+            /* Ajuster la largeur pour occuper le reste de l'espace */
+            height: 700px;
+            /* Hauteur de la div image (ajustez selon votre besoin) */
+            background-image: url('image/loose.jpg');
+            background-repeat: no-repeat;
+            background-position: center bottom;
+        }
+
+        /* Autres styles pour le contenu */
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Votre score est si bas que même la gravité ne peut pas l'abaisser davantage !</h1>
+    </div>
+    <div class="image"></div>
+</body>
+
+</html>

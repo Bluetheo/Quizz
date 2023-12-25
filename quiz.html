@@ -12,6 +12,10 @@
             align-items: center;
             height: 100vh;
             margin: 0;
+            background-image: url(image/jardin.jpg);
+            background-repeat: no-repeat;
+            background-size: 100%;
+            background-position: center;
         }
 
         .quiz-container {
@@ -201,10 +205,10 @@
                 button.addEventListener("click", function () {
                     // Vérifie le score et redirige en conséquence
                     if (score >= 9) {
-                        window.location.href = "gift1.html";
+                        window.location.href = "win.html";
                     } else {
                         // Redirige vers une autre page si le score est inférieur à 9
-                        window.location.href = "gift2.html";
+                        window.location.href = "loose.html";
                     }
                 });
                 document.querySelector(".btn-container").appendChild(button);
