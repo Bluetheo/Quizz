@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Quiz sur le Château de Versailles</title>
+    <style>
+        body {
+            font-family: 'Helvetica Neue', sans-serif;
+            background-color: #f2f2f2;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .quiz-container {
+            background-color: #fff;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+            padding: 50px;
+            text-align: center;
+            max-width: 800px;
+        }
+
+        h2 {
+            color: #007BFF;
+            font-size: 24px;
+        }
+
+        #question {
+            color: #333;
+            font-size: 18px;
+            margin-top: 20px;
+        }
+
+        #score {
+            color: #555;
+            font-size: 18px;
+            margin-top: 10px;
+        }
+
+        .btn-container {
+            margin-top: 20px;
+        }
+
+        .btn {
+            background-color: #007BFF;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            margin: 5px;
+            margin-right: 15px;
+        }
+
+        .btn:hover {
+            background-color: #0056b3;
+        }
+
+        /* Style du bouton avec la classe "gift" */
+        .gift {
+            background-color: #FF5733;
+            /* Couleur de fond */
+            color: white;
+            /* Couleur du texte */
+            padding: 10px 20px;
+            /* Espacement interne du bouton */
+            border: none;
+            /* Supprime la bordure */
+            border-radius: 5px;
+            /* Coins arrondis */
+            cursor: pointer;
+            /* Curseur au survol */
+            font-size: 16px;
+            /* Taille de police */
+        }
+
+        /* Style du bouton avec la classe "gift" au survol */
+        .gift:hover {
+            background-color: #FF3300;
+            /* Couleur de fond légèrement plus foncée au survol */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="quiz-container">
+        <!--<h2>Quiz sur le Château de Versailles</h2>-->
+        <h2>Question pour un Champignon</h2>
+        <p id="question">Question 1 : Quel roi de France a ordonné la construction du Château de Versailles ?</p>
+        <p id="score">Score : 0/10</p>
+        <div class="btn-container" id="btn-container">
+        </div>
+
+    </div>
+
+    <script>
+        const questions = [
+            //"Quel roi de France a ordonné la construction du Château de Versailles ?",
+            //"Quelle architecte renommé a conçu une grande partie du Château de Versailles ?",
+            //"Dans quelle ville se trouve le Château de Versailles ?",
+            //"Quel jardin célèbre est situé derrière le Château de Versailles ?",
+            //"En quelle année Louis XIV a-t-il transféré sa cour de Paris à Versailles ?",
+            //"Quelle célèbre galerie du Château de Versailles est connue pour ses miroirs et sa décoration somptueuse ?",
+            //"Quel traité important a été signé au Château de Versailles en 1919, mettant fin à la Première Guerre mondiale ?",
+            //"Quel musée est actuellement situé dans une partie du Château de Versailles ?",
+            //"Combien de pièces et chambres de château compte-t-on à Versailles ?",
+            //"Quel est le nom du parc immense qui entoure le Château de Versailles ?"
+            "Quelle est la capitale de la Colombie ?",
+            "Qui a écrit Romeo et Juliette ?",
+            "Quel est le symbole chimique de l oxygène ?",
+            "Quel est l'organe le plus grand du corps humain ?",
+            "Qui a peint la Joconde ?",
+            "Quel est le plus grand océan du monde ?",
+            "Quel est le plus haut sommet du monde ?",
+            "Quelle est la planète la plus proche du soleil ?",
+            "Qui a découvert la gravité en observant une pomme tomber ?",
+            "Quel est le nombre de continents dans le monde ?"
+        ];
+
+        const answerOptions = [
+            //['Louis XVI', 'Louis XIV', 'Louis XV'],
+            //['Jules Hardouin-Mansart', 'André Le Nôtre', 'Claude Perrault'],
+            //['Paris', 'Versailles', 'Marseille'],
+            //['Le jardin de Versailles', 'Le jardin des Tuileries', 'Le jardin du Luxembourg'],
+            //['1664', '1672', '1682'],
+            //['La Galerie des Miroirs', 'La Galerie des Glaces', 'La Galerie des Tapisseries'],
+            //['Le Traité de Paris', 'Le Traité de Versailles', 'Le Traité de Tordesillas'],
+            //['Le musée du Louvre', 'Le musée d Orsay', 'Le musée de l Histoire de France'],
+            //['Plus de 500', 'Plus de 1,000', 'Plus de 2,000'],
+            //['Le parc de Versailles', 'Le parc des Buttes-Chaumont', 'Le parc de la Villette']
+
+            ['Paris', 'New-York', 'Bogota'],
+            ['Jules Hardouin-Mansart', 'William Shakespeare', 'Claude Perrault'],
+            ['A', 'E', 'O'],
+            ['Intestin', 'Coeur', 'Peau'],
+            ['Leonard De Vinci', 'Georges Clooney', 'Jean Monnet'],
+            ['Pacifique', 'Atlantique', 'Indien'],
+            ['Everest', 'Mont Blanc', 'Himalaya'],
+            ['Terre', 'Uranus', 'Mercure'],
+            ['Volta', 'Newton', 'William Thomson'],
+            ['0', '18', '7']
+        ];
+
+        const correctAnswers = [
+            //'Louis XIV',
+            //'Jules Hardouin-Mansart',
+            //'Versailles',
+            //'Le jardin de Versailles',
+            //'1682',
+            //'La Galerie des Glaces',
+            //'Le Traité de Versailles',
+            //'Le musée de l Histoire de France',
+            //'Plus de 2,000',
+            //'Le parc de Versailles'
+
+            'Bogota',
+            'William Shakespeare',
+            'O',
+            'Intestin',
+            'Leonard De Vinci',
+            'Pacifique',
+            'Everest',
+            'Mercure',
+            'Newton',
+            '7'
+        ];
+
+        let currentQuestion = 0;
+        let score = 0;
+
+        function checkAnswer(selectedAnswer) {
+            const correctAnswer = correctAnswers[currentQuestion];
+
+            if (selectedAnswer === correctAnswer) {
+                score++;
+                document.getElementById("score").textContent = `Score : ${score}`;
+                alert("Bonne réponse!");
+            } else {
+                alert("Mauvaise réponse. La réponse correcte est : " + correctAnswer);
+            }
+
+            currentQuestion++;
+
+            if (currentQuestion < questions.length) {
+                shuffleOptions(answerOptions[currentQuestion]);
+                showQuestion();
+            } else {
+                // Après avoir affiché le message "Quiz terminé!" et supprimé le contenu du conteneur de boutons
+                document.getElementById("question").textContent = "Quiz terminé!";
+                document.querySelector(".btn-container").innerHTML = "";
+
+                // Créez un bouton et ajoutez-le au conteneur de boutons
+                var button = document.createElement("button");
+                button.textContent = "Récuperez votre lot"; // Texte du bouton
+                button.classList.add("gift");
+                button.addEventListener("click", function () {
+                    // Vérifie le score et redirige en conséquence
+                    if (score >= 9) {
+                        window.location.href = "gift1.html";
+                    } else {
+                        // Redirige vers une autre page si le score est inférieur à 9
+                        window.location.href = "gift2.html";
+                    }
+                });
+                document.querySelector(".btn-container").appendChild(button);
+
+
+
+            }
+
+            // Mettre à jour l'affichage du nombre de questions passées
+            document.getElementById("score").textContent = `${score}/${questions.length}`;
+        }
+
+        function shuffleOptions(array) {
+            for (let i = array.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [array[i], array[j]] = [array[j], array[i]];
+            }
+        }
+
+        function showQuestion() {
+            document.getElementById("question").textContent = `Question ${currentQuestion + 1} : ${questions[currentQuestion]}`;
+            updateButtons(answerOptions[currentQuestion]);
+        }
+
+        function updateButtons(options) {
+            const buttonContainer = document.getElementById("btn-container");
+            buttonContainer.innerHTML = '';
+
+            for (let i = 0; i < options.length; i++) {
+                const button = document.createElement('button');
+                button.className = 'btn';
+                button.textContent = options[i];
+                button.setAttribute('onclick', `checkAnswer('${options[i]}')`);
+                buttonContainer.appendChild(button);
+            }
+        }
+
+        shuffleOptions(answerOptions[0]);
+        showQuestion();
+    </script>
+</body>
+
+</html>
