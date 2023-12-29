@@ -39,15 +39,45 @@
             background-position: center bottom;
         }
 
-        /* Autres styles pour le contenu */
+        /* Nouveau style pour le bouton */
+        .container button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #ff0000;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .container button:hover {
+            background-color: #cc0000;
+        }
     </style>
 </head>
 
 <body>
+    <audio autoplay>
+        <source src="audio/loose.mp3" type="audio/mpeg">
+    </audio>
     <div class="container">
         <h1>Votre score est si bas que même la gravité ne peut pas l'abaisser davantage !</h1>
+        <button onclick="recommencerQuiz()">Recommencer le quiz</button>
+
     </div>
     <div class="image"></div>
+
+
+
 </body>
+
+
+<script>
+    function recommencerQuiz() {
+        window.location.href = 'quiz.html'; //(exemple de redirection)
+    }
+</script>
 
 </html>
