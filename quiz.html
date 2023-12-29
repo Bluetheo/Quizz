@@ -104,42 +104,58 @@
 
     <script>
         const questions = [
-            "Quel roi de France a ordonné la construction du Château de Versailles ?",
-            "Quelle architecte renommé a conçu une grande partie du Château de Versailles ?",
-            "Dans quelle ville se trouve le Château de Versailles ?",
-            "Quel jardin célèbre est situé derrière le Château de Versailles ?",
-            "En quelle année Louis XIV a-t-il transféré sa cour de Paris à Versailles ?",
-            "Quelle célèbre galerie du Château de Versailles est connue pour ses miroirs et sa décoration somptueuse ?",
-            "Quel traité important a été signé au Château de Versailles en 1919, mettant fin à la Première Guerre mondiale ?",
-            "Quel musée est actuellement situé dans une partie du Château de Versailles ?",
-            "Combien de pièces et chambres de château compte-t-on à Versailles ?",
-            "Quel est le nom du parc immense qui entoure le Château de Versailles ?"
+        /*1*/     "Quel roi de France a ordonné la construction du Château de Versailles ?",
+        /*2*/     "Quelle architecte renommé a conçu une grande partie du Château de Versailles ?",
+        /*3*/     "Dans quelle ville se trouve le Château de Versailles ?",
+        /*4*/     "Quel jardin célèbre est situé derrière le Château de Versailles ?",
+        /*5*/     "En quelle année Louis XIV a-t-il transféré sa cour de Paris à Versailles ?",
+        /*6*/     "Quelle célèbre galerie du Château de Versailles est connue pour ses miroirs et sa décoration somptueuse ?",
+        /*7*/     "Quel traité important a été signé au Château de Versailles en 1919, mettant fin à la Première Guerre mondiale ?",
+        /*8*/     "Quel musée est actuellement situé dans une partie du Château de Versailles ?",
+        /*9*/     "Combien de pièces et chambres de château compte-t-on à Versailles ?",
+        /*10*/    "Quel est le nom du parc immense qui entoure le Château de Versailles ?",
+        /*11*/    "Laquelle de ces femmes n'est pas une favorite du Roi Soleil ?",
+        /*12*/    "Quel est le nom complet de Louis XIV ?",
+        /*13*/    "Combien de temps durera le règne de Louis XIV",
+        /*14*/    "Qui fit construire le Grand Trianon ?",
+        /*15*/    "Le château de Versailles possède un opéra royal."
         ];
 
         const answerOptions = [
-            ['Louis XVI', 'Louis XIV', 'Louis XV'],
-            ['Jules Hardouin-Mansart', 'André Le Nôtre', 'Claude Perrault'],
-            ['Paris', 'Versailles', 'Marseille'],
-            ['Le jardin de Versailles', 'Le jardin des Tuileries', 'Le jardin du Luxembourg'],
-            ['1664', '1672', '1682'],
-            ['La Galerie des Miroirs', 'La Galerie des Glaces', 'La Galerie des Tapisseries'],
-            ['Le Traité de Paris', 'Le Traité de Versailles', 'Le Traité de Tordesillas'],
-            ['Le musée du Louvre', 'Le musée d Orsay', 'Le musée de l Histoire de France'],
-            ['Plus de 500', 'Plus de 1,000', 'Plus de 2,000'],
-            ['Le parc de Versailles', 'Le parc des Buttes-Chaumont', 'Le parc de la Villette']
+        /*1*/['Louis XVI', 'Louis XIV', 'Louis XV'],
+        /*2*/['Jules Hardouin-Mansart', 'André Le Nôtre', 'Claude Perrault'],
+        /*3*/['Paris', 'Versailles', 'Marseille'],
+        /*4*/['Le jardin de Versailles', 'Le jardin des Tuileries', 'Le jardin du Luxembourg'],
+        /*5*/['1664', '1672', '1682'],
+        /*6*/['La Galerie des Miroirs', 'La Galerie des Glaces', 'La Galerie des Tapisseries'],
+        /*7*/['Le Traité de Paris', 'Le Traité de Versailles', 'Le Traité de Tordesillas'],
+        /*8*/['Le musée du Louvre', 'Le musée d Orsay', 'Le musée de l Histoire de France'],
+        /*9*/['Plus de 500', 'Plus de 1,000', 'Plus de 2,000'],
+        /*10*/['Le parc de Versailles', 'Le parc des Buttes-Chaumont', 'Le parc de la Villette'],
+        /*11*/['Louis de la Vallière', 'Madame Palatine', 'Madame Palpatine'],
+        /*12*/['Louis de Bourbon', 'Louis de Navarre', 'Louis de Bourdon'],
+        /*13*/['68 ans', '72 ans', '70 ans'],
+        /*14*/['Louis XVI', 'Louis XIV', 'Louis XV'],
+        /*15*/['Vrai', 'Faux', 'Peut-être'],
+
         ];
 
         const correctAnswers = [
-            'Louis XIV',
-            'Jules Hardouin-Mansart',
-            'Versailles',
-            'Le jardin de Versailles',
-            '1682',
-            'La Galerie des Glaces',
-            'Le Traité de Versailles',
-            'Le musée de l Histoire de France',
-            'Plus de 2,000',
-            'Le parc de Versailles'
+        /*1*/    'Louis XIV',
+        /*2*/    'Jules Hardouin-Mansart',
+        /*3*/    'Versailles',
+        /*4*/    'Le jardin de Versailles',
+        /*5*/    '1682',
+        /*6*/    'La Galerie des Glaces',
+        /*7*/    'Le Traité de Versailles',
+        /*8*/    'Le musée de l Histoire de France',
+        /*9*/    'Plus de 2,000',
+        /*10*/    'Le parc de Versailles',
+        /*11*/    'Madame Palatine',
+        /*12*/    'Louis de Bourbon',
+        /*13*/    '72 ans',
+        /*14*/    'Louis XIV',
+        /*15*/    'Vrai',
 
         ];
 
@@ -173,7 +189,7 @@
                 button.classList.add("gift");
                 button.addEventListener("click", function () {
                     // Vérifie le score et redirige en conséquence
-                    if (score >= 9) {
+                    if (score >= 14) {
                         window.location.href = "win.html";
                     } else {
                         // Redirige vers une autre page si le score est inférieur à 9
